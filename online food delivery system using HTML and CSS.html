@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* CSS Reset */
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      /* Header Styling */
+      #top {
+        color: rgb(245, 10, 10);
+        text-align: center;
+        font-size: 46px;
+        font-family: "Ubuntu Mono", monospace;
+      }
+      #top1 {
+        text-align: center;
+        color: black;
+        font-size: 21px;
+        font-family: "Ubuntu Mono", monospace;
+      }
+      /* Navigation bar styling */
+      #navbar {
+        display: flex;
+        flex-direction: column;
+        background-color: gray;
+        height: 14vh;
+        width: 100vw;
+        font-family: "Ubuntu Mono", monospace;
+        margin-top: 10px;
+        border: 2px solid black;
+        border-radius: 15px;
+      }
+      #navbar img {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        margin-bottom: 3px;
+      }
+      /* Website background image designing */
+      #container1 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 63vh;
+      }
+      /* Contact Us Section */
+      #ContactUs {
+        width: 100vw;
+        height: auto; /* Adjust height to fit content */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: gray;
+      }
+      .form-shape input,
+      .form-shape select,
+      .form-shape textarea {
+        width: 92%;
+        padding: 0.5rem;
+      }
+      /* Changing the color of placeholder */
+      ::placeholder {
+        color: gray;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Online FoodShop - Contact Us</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="top">Online</h1>
+      <h1 id="top1">FoodShop</h1>
+    </header>
+    <hr />
+    <nav id="navbar">
+      <img
+        src="https://media.geeksforgeeks.org/wp-content/uploads/20240711123257/jpeg-optimizer_2151336570.jpg"
+      />
+      <ul id="navcontent">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#ContactUs">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div id="container1">
+      <div id="row1">Welcome to Online FoodShop</div>
+      <button class="btn">ORDER NOW</button>
+    </div>
+
+    <div id="ContactUs">
+      <h1>Contact Us</h1>
+      <form action="#">
+        <div class="form-shape">
+          <label for="query">Type of Query</label>
+          <select name="myQuery" id="query">
+            <option value="sel" selected>Select</option>
+            <option value="ord">Order related Issues</option>
+            <option value="Site">Site related Issues</option>
+            <option value="fed">Complaint related Issues</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <div class="form-shape">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="myName"
+            id="name"
+            placeholder="Enter your Name"
+          />
+        </div>
+        <div class="form-shape">
+          <label for="email">Email-Id</label>
+          <input
+            type="email"
+            name="myEmail"
+            id="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="form-shape">
+          <label for="pho">Phone Number</label>
+          <input
+            type="phone"
+            name="myPhone"
+            id="pho"
+            placeholder="Enter your Phone no"
+          />
+        </div>
+        <div id="radio">
+          Are you a member of OnlineFoodShop: Yes
+          <input type="radio" name="eligible" /> No
+          <input type="radio" name="eligible" />
+        </div>
+        <div class="form-shape">
+          <label for="message">Elaborate your query</label>
+          <textarea name="mesg" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>Copyright © DACV OnlineFoodShop. All Rights are reserved</footer>
+  </body>
+</html>

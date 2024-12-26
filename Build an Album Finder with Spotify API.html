@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Finder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+      }
+
+      #results {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Album Finder</h1>
+      <input type="text" id="artist-input" placeholder="Enter artist name" />
+      <button id="search-button">Search</button>
+      <div id="results"></div>
+    </div>
+    <script>
+      const clientId = "YOUR_CLIENT_ID";
+      const clientSecret = "YOUR_CLIENT_SECRET";
+      const tokenUrl = "https://accounts.spotify.com/api/token";
+      const apiUrl = "https://api.spotify.com/v1/artists";
+
+      async function getAccessToken() {
+        const response = await fetch(tokenUrl, {
+          method: "POST",
+          headers: {
+            Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: "grant_type=client_credentials",
+        });
+
+        const data = await response.json();
+        return data.access_token;
+      }
+
+      async function searchAlbums(artistName) {
+        const token = await getAccessToken();
+
+        const response = await fetch(`${apiUrl}/${artistName}/albums`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+
+        const data = await response.json();
+
+        displayResults(data.items);
+      }
+
+      function displayResults(albums) {
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // Clear previous results
+
+        albums.forEach((album) => {
+          const albumElement = document.createElement("div");
+          albumElement.innerHTML = `
+                    <h3>${album.name}</h3>
+                    <p>Release Date: ${album.release_date}</p>
+                    <img src="${album.images[0].url}" alt="${album.name}" style="width:100%;">
+                `;
+          resultsDiv.appendChild(albumElement);
+        });
+      }
+
+      document.getElementById("search-button").addEventListener("click", () => {
+        const artistName = document.getElementById("artist-input").value;
+        searchAlbums(artistName);
+      });
+    </script>
+  </body>
+</html>

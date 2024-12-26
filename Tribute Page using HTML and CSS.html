@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: linear-gradient(to right, #e0f7fa, #e1bee7);
+        margin: 5%;
+        font-family: "Arial", sans-serif;
+        animation: backgroundAnimation 10s infinite alternate;
+      }
+
+      @keyframes backgroundAnimation {
+        from {
+          background: linear-gradient(to right, #e0f7fa, #e1bee7);
+        }
+        to {
+          background: linear-gradient(to right, #e1bee7, #e0f7fa);
+        }
+      }
+
+      #title {
+        text-align: center;
+        text-shadow: 5px 5px 10px #00acc1;
+        font-size: 7vh;
+        color: #00796b;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      img {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      #caption {
+        font-size: 20px;
+        font-family: "Gill Sans", sans-serif;
+        color: #004d40;
+        text-align: center;
+        margin-top: 10px;
+        animation: slideIn 2s ease-in-out;
+      }
+
+      div#tribute-data {
+        background: rgba(46, 139, 87, 0.15);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        font-family: "Georgia", serif;
+        padding: 25px;
+        margin: 20px;
+        border-radius: 15px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      h1.title-NR {
+        font-size: 35px;
+        color: #00796b;
+        text-align: center;
+        text-shadow: 5px 5px 10px #004d40;
+        animation: bounce 2s infinite alternate;
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-10px);
+        }
+      }
+
+      p {
+        line-height: 1.6;
+        font-size: 18px;
+        color: #00332e;
+        animation: fadeInContent 3s ease-in-out;
+      }
+
+      @keyframes fadeInContent {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      #tribute-link {
+        text-decoration: none;
+        color: #004d40;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      #tribute-link:hover {
+        color: #00acc1;
+        transform: scale(1.1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <h1 id="title">Shree Narayana Murthy</h1>
+
+      <div id="img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6q0abDuZvdjqkPEBsg7gu05R6zE4izE3V0g&s"
+          id="image"
+          alt="Shree Narayana Murthy"
+        />
+        <small id="caption">
+          Renowned Indian software industrialist and co-founder of Infosys, a
+          multinational corporation.
+        </small>
+      </div>
+
+      <div id="tribute-data">
+        <h1 class="title-NR">About the Legend</h1>
+        <p>
+          ☛ Narayana Murthy, full name Nagavara Ramarao Narayana Murthy, was
+          born on August 20, 1946, in Mysore, Karnataka, India.<br /><br />
+          ☛ He is the co-founder of Infosys, a global leader in consulting,
+          technology, and outsourcing solutions.<br /><br />
+          ☛ Murthy earned his undergraduate degree in electrical engineering
+          from the National Institute of Engineering, University of Mysore, and
+          his master's degree from the Indian Institute of Technology Kanpur.<br /><br />
+          ☛ In 1981, Murthy founded Infosys along with six other software
+          professionals. He served as the CEO from 1981 to 2002 and as the
+          chairman from 2002 to 2011.<br /><br />
+          ☛ Under his leadership, Infosys became one of the leading IT companies
+          in India, known for its innovation, quality, and customer-centric
+          approach.<br /><br />
+          ☛ He introduced the Global Delivery Model, which became the foundation
+          for the Indian IT services industry's growth.<br /><br />
+          ☛ He has been honored with numerous awards, including the Padma
+          Vibhushan and the Padma Shri by the Government of India.<br /><br />
+          ☛ He is also a recipient of the Ernst & Young World Entrepreneur of
+          the Year Award and has been listed among the greatest entrepreneurs of
+          our time by Fortune magazine.<br /><br />
+          ☛ Beyond his professional achievements, Murthy is known for his
+          philanthropy and commitment to social causes.<br /><br />
+          ☛ He has made significant contributions to education, healthcare, and
+          rural development through the Infosys Foundation and other
+          philanthropic initiatives.<br /><br />
+          ☛ Murthy's leadership and vision have not only transformed Infosys
+          into a global powerhouse but also inspired a generation of
+          entrepreneurs and business leaders in India and around the world.
+          <br /><br />
+        </p>
+      </div>
+      <br />
+      For more information, check out
+      <a
+        id="tribute-link"
+        href="https://en.wikipedia.org/wiki/N._R._Narayana_Murthy"
+      >
+        <b>Shree Narayana Murthy</b>
+      </a>
+      on Wikipedia. [
+      <small
+        >Developed by @<a href="https://github.com/THEDACV/"
+          >Chaithanya Vishwamitra</a
+        > </small
+      >]
+    </main>
+  </body>
+</html>
